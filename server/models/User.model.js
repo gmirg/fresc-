@@ -13,7 +13,7 @@ userModel = {
                 unique: true,
                 allowNull: false
             },
-            full_name: {
+            user_name: {
                 type: DataTypes.STRING,
                 unique: true,
                 allowNull: false

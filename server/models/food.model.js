@@ -1,33 +1,41 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
-// {
-//     "_id": 1,
-//     "Name": "Chicken Meat",
-//     "img_food": "./img/meat/chicken.png",
-//     "food_category": "Meat",
-//     "category_icon": "./img/meat/turkey.png",
-//     "qty": "",
-//     "value": 4.58,
-//     "onFridge": "",
-//     "opened/cooked": "",
-//     "Notes": "",
-//     "expiration alert": ""
-//   }
+const { Schema, model } = require("mongoose");
 
- 
-let foodSchema= new Schema({
-    id: Number,
+let foodTemplateSchema = new Schema({
     Name: String, 
     img_food: String,
     food_category: String,
     category_icon: String,
     qty: Number,
     value: Number,
-    onFridge: Date,
+    onFridge: {
+        type: Date,
+        default: Date.now
+    },
     opened_cooked: Date,
     Notes: String,
+    expired: Boolean,
     expiration_alert: Date
 });
- 
-const foodModel = mongoose.model("food", foodSchema);
-module.exports = foodModel;
+var FoodTemplate = model("FoodTemplate", foodTemplateSchema, "food")
+let foodSchema= new Schema({
+    Name: String, 
+    img_food: String,
+    food_category: String,
+    category_icon: String,
+    qty: Number,
+    value: Number,
+    onFridge: {
+        type: Date,
+        default: Date.now
+    },
+    opened_cooked: Date,
+    Notes: String,
+    expired: Boolean,
+    expiration_alert: Date
+});
+var Food = model("Food", foodSchema, "food_users")
+
+module.exports = {
+    FoodTemplate : FoodTemplate,
+    Food : Food
+}

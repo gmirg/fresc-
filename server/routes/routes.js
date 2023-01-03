@@ -1,6 +1,12 @@
 const router = require("express").Router();
+// const user = require("../controllers/user.controllers");
+const food = require("../controllers/fridge.controllers")
 
 //FOOD
+router.get("/list-templates", food.getTemplates)
+router.post("/add", food.addFood)
+// router.post("/food",food.findFood)
+// router.get("/food", food.sendFood)
 // router.post("/insert-food", board.insert);
 // router.get("/show-food/:id", board.show);
 // router.post("/update-food", board.update);
@@ -17,3 +23,5 @@ const router = require("express").Router();
 // router.post("/searchUser",user.searchUser);
 // router.post("/delete-user", user.delete);
 // router.get("/logged-user", user.getUserbyCookie)
+
+module.exports = router;

@@ -1,5 +1,5 @@
-const conexion = require("../dataBases/mysql")
-const Users = require("../models/users.model");
+const conexion = require("../dataBases/mysql").default
+const Users = require("../models/user.model");
 const bcyptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 // const sendemail = require("./email.controllers");
@@ -13,6 +13,44 @@ const user = {
    * @param {json} req 
    * @param {json} res 
    */
+  register: async (req, res) => {
+    const { email, password } = req.body;
+    // let con = await getConnection();
+    let con = await conexion.abrir();
+    // validar correo 
+    if (!email || !password) return res.status(400).json({ error: 'Please provide email and/or password' });
+    // se busca el usuario por email en la base de datos, el email es UNIQUE
+    let selectQuery = 'SELECT * FROM ?? WHERE ?? = ?';
+    let query = mysql.format(selectQuery, ['users', 'email', email]);
+    let query2 = mysql.format(selectQuery, ['app_admins', 'email', email]);
+    let user = await con.query(query);
+    let admin = await con.query(query2);
+
+    if (!user[0] && !admin[0]) return res.status(400).json({ error: 'Usuario no encontrado' });
+    if (user[0]) {
+        let validUser = user[0].user_pass;
+        if (password != validUser) return res.status(400).json({ error: 'contraseña no válida' })
+        // create token
+        const token = jwt.sign({
+            email: user[0].email,
+            id_user: user[0].id_user
+        }, process.env.TOKEN_SECRET, { expiresIn: '600000' })
+        res.location(`/userDash/${token}`);
+        res.sendStatus(302);
+    }
+    if (admin[0]) {
+        let validAdmin = admin[0].admin_pass;
+        if (password != validAdmin) return res.status(400).json({ error: 'contraseña no válida' })
+        // create token
+        const token = jwt.sign({
+            email: admin[0].email,
+            id_admin: admin[0].id_admin
+
+        }, process.env.TOKEN_SECRET, { expiresIn: '600000' })
+        res.location(`/admin/${token}`);
+        res.sendStatus(302);
+    }
+},
   confirmEmail: async (req, res) => {
     try {
       const { email } = req.body;
@@ -35,13 +73,13 @@ const user = {
     try {
       let jwtVerify = jwt.verify(req.body.jwt, process.env.TOKEN_SECRET);
       let email = jwtVerify.email;
-      const { full_name, pass } = req.body;
+      const { user_name, pass } = req.body;
       const pass_hash = await bcyptjs.hash(pass, 8);
       var con = await conexion.abrir();
       const usr = await Users.create(con);
-      const user = await usr.create({ email, full_name, bio: "", "pass": pass_hash, avatar: "1", configuration: JSON.stringify({}) })
-      const infoJwt = jwt.sign({ email, "id": user.dataValues.id, "full_name":user.dataValues.full_name }, process.env.TOKEN_SECRET);
-      res.json({ validation: true, "jwt": infoJwt, user:{full_name:user.dataValues.full_name, id:user.dataValues.id, bio:user.dataValues.bio}});
+      const user = await usr.create({ email, user_name, "pass": pass_hash, avatar: "1"})
+      const infoJwt = jwt.sign({ email, "id": user.dataValues.id, "user_name":user.dataValues.user_name }, process.env.TOKEN_SECRET);
+      res.json({ validation: true, "jwt": infoJwt, user:{user_name:user.dataValues.full_name, id:user.dataValues.id, bio:user.dataValues.bio}});
     } catch (error) {
       res.json(error);
     } finally {
