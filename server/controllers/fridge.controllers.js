@@ -44,6 +44,12 @@ const fridge = {
         // conn.close();
         
     },
+    getOne: async (req, res) => {
+        let params_food_name = req.params.name;
+        let food_name = (params_food_name.charAt(0).toUpperCase() + params_food_name.slice(1)).replaceAll('-', ' ')
+        const foodFile = await FoodTemplate.findOne({ Name : food_name })           
+        res.json(foodFile)
+    }
     // insertFood: async (req, res) => {
     //     const { idUsuario, nombreTarea } = req.body;
     //     let info = { idUsuario, nombreTarea };

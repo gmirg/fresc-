@@ -2,11 +2,21 @@
 
 body {
   background-color: #F9F9F9;
-  padding: 0 2%;
   font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   letter-spacing: -1px;
 }
+
+.container {
+  padding: 0 8%;
+}
+
+.container h3,
+h2 {
+  margin-left: 1%;
+}
+
 .food-container {
+  padding: 0 2%;
   display: flex;
   flex-flow: row wrap;
   justify-content: start;
@@ -14,10 +24,11 @@ body {
   margin: 0;
   list-style: none;
 }
+
 .card {
   background: #fff;
   padding: 15px;
-  width: 150px; 
+  width: 150px;
   height: auto;
   margin: 10px;
   color: #000;
@@ -27,4 +38,93 @@ body {
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
   border-radius: 20px;
   border-width: 0;
+}
+
+form {
+  width: 22rem;
+  margin: 1rem auto 0;
+}
+.form-header {
+  margin: 2rem auto 0;
+  width: 24rem;
+}
+.form-container .count {
+  padding: 0.25rem 0;
+  text-align: center;
+  color: #fff;
+  background: #333;
+  border-radius: 4px;
+}
+
+.form-container div,
+.form-container select {
+  margin-bottom: 1.5rem;
+  width: inherit;
+}
+
+.form-container input[type="submit"],
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container select,
+.form-container textarea {
+  padding: 0 0.5rem;
+  width: inherit;
+  height: 2rem;
+  border-radius: 15px;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 40px rgb(0 0 0 / 3%);
+  margin-top: 10px;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.form-container textarea {
+  height: 5rem;
+}
+
+.form-container input[type="submit"] {
+  height: 2.5rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  background: #319723;
+  cursor: pointer;
+}
+
+.form-container p {
+  margin-top: 0.5rem;
+  color: #ff9900;
+}
+
+.form-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.radio {
+  width: 50%;
+  display: inline-flex;
+  float: right;
+}
+.thumb {
+  background: #fff;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+  border-radius: 20px;
+  border-width: 0;
+}
+.name-block {
+  padding: 0 3%;
+}
+.fresco {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+/* Media queries */
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    padding: 0 5%;
+  }
 }

@@ -5,10 +5,8 @@ const food = require("../controllers/fridge.controllers")
 //FOOD
 router.get("/list-templates", food.getTemplates)
 router.post("/add", food.addFood)
-// router.post("/food",food.findFood)
-// router.get("/food", food.sendFood)
+router.get("/food/:name", food.getOne);
 // router.post("/insert-food", board.insert);
-// router.get("/show-food/:id", board.show);
 // router.post("/update-food", board.update);
 // router.delete("/delete-food", board.delete);
 
