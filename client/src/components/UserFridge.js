@@ -5,7 +5,6 @@ export const UserFridge = () => {
     const [type, setType] = useState([])
     const [linkTo, setLinkTo] = useState("/add-food/Chicken-meat");
     const [navigate, setNavigate] = useState(false);
-    const [start, setStart] = useState(false);
     const handleClick = (value) => {
         setLinkTo(`/add-food/${value.replaceAll(' ', '-')}`)
         setNavigate(true)

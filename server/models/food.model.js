@@ -9,7 +9,7 @@ let foodTemplateSchema = new Schema({
     value: Number,
     onFridge: {
         type: Date,
-        default: Date.now
+        // default: Date.now
     },
     opened_cooked: Date,
     Notes: String,
@@ -26,12 +26,14 @@ let foodSchema= new Schema({
     value: Number,
     onFridge: {
         type: Date,
-        default: Date.now
+        // default: Date.now
     },
-    opened_cooked: Date,
+    lasts : Number,
+    lasts_oc: Number,
+    opened_cooked: Boolean,
     Notes: String,
     expired: Boolean,
-    expiration_alert: Date
+    expires_on: Date
 });
 var Food = model("Food", foodSchema, "food_users")
 
