@@ -9,6 +9,7 @@ export const fetcher = async (endPoint, metodo, datos) => {
       },
     };
   
-    const res = (await fetch(endPoint, metaData)).json();
+    const res = (await fetch(endPoint, metaData)).json()
+    
     return res;
   }

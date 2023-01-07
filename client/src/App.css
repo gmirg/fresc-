@@ -48,9 +48,16 @@ form {
   width: 22rem;
   margin: 1rem auto 0;
 }
-.form-header {
+.form-header, .login-header, .close {
   margin: 2rem auto 0;
   width: 24rem;
+}
+.login-header {
+  margin-top: 10%;
+}
+.login-block h1, .login-block h2 {
+  text-align: center;
+  margin: 0;
 }
 .form-container .count {
   padding: 0.25rem 0;
@@ -70,6 +77,8 @@ form {
 .form-container input[type="submit"],
 .form-container input[type="date"],
 .form-container input[type="number"],
+.form-container input[type="text"],
+.form-container input[type="password"],
 .form-container select,
 .form-container textarea {
   padding: 0 0.5rem;
@@ -138,10 +147,16 @@ form {
     right: 3%;
     top: 1.5%;
 }
+.error-message {
+  color: red;
+}
 /* Media queries */
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   .container {
     padding: 0 5%;
+  }
+  .login-header {
+    margin-top: 25%;
   }
 }

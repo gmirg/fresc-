@@ -54,7 +54,7 @@ export const UserFridge = () => {
                                     className='card'
                                     value={element.Name}
                                     onClick={e => handleClick(e.currentTarget.value)}>
-                                    <img src={element.img_food} width="60" alt="" />
+                                    <img src={"." + element.img_food} width="60" alt="" />
                                     <h3>{element.Name}</h3>
                                 </button>
                             )
@@ -72,7 +72,7 @@ export const UserFridge = () => {
                                     className='card'
                                     value={element.Name}
                                     onClick={e => handleClick(e.currentTarget.value)}>
-                                    <img src={element.img_food} width="60" alt="" />
+                                    <img src={"." + element.img_food} width="60" alt="" />
                                     <h3>{element.Name}</h3>
                                 </button>
                             )
@@ -90,7 +90,7 @@ export const UserFridge = () => {
                                     className='card'
                                     value={element.Name}
                                     onClick={e => handleClick(element.Name)}>
-                                    <img src={element.img_food} width="60" alt="" />
+                                    <img src={"." + element.img_food} width="60" alt="" />
                                     <h3>{element.Name}</h3>
                                 </button>
                             )
@@ -108,7 +108,7 @@ export const UserFridge = () => {
                                     className='card'
                                     value={element.Name}
                                     onClick={e => handleClick(e.currentTarget.value)}>
-                                    <img src={element.img_food} width="60" alt="" />
+                                    <img src={"." + element.img_food} width="60" alt="" />
                                     <h3>{element.Name}</h3>
                                 </button>
                             )
@@ -126,7 +126,7 @@ export const UserFridge = () => {
                                     className='card'
                                     value={element.Name}
                                     onClick={e => handleClick(e.currentTarget.value)}>
-                                    <img src={element.img_food} width="60" alt="" />
+                                    <img src={"." + element.img_food} width="60" alt="" />
                                     <h3>{element.Name}</h3>
                                 </button>
                             )

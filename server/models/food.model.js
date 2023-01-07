@@ -30,10 +30,10 @@ let foodSchema= new Schema({
     },
     lasts : Number,
     lasts_oc: Number,
-    opened_cooked: Boolean,
+    opened_cooked: String,
     Notes: String,
     expired: Boolean,
-    expires_on: Date
+    expires_on: String
 });
 var Food = model("Food", foodSchema, "food_users")
 

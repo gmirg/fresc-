@@ -24,7 +24,7 @@ const fridge = {
         // })
     },
     addFood: async (req, res) => {
-        conn.open();
+        // conn.open();
         const  parameters = req.body;
         let newFood = new Food(parameters);
         
@@ -38,7 +38,8 @@ const fridge = {
             }
             return res.status(200).json({
                 status: "success",
-                mensaje: "Lo has guardado en la BD"
+                mensaje: "Lo has guardado en la BD",
+                id : result.id
             })
         });
         // conn.close();
