@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { today } from "../helpers/today";
 import { Link } from "react-router-dom";
-// import { fetcher } from "../helpers/fetcher";
+import { useNavigate } from "react-router-dom";
+import { Close } from "../helpers/Close";
 
 export const AddFood = () => {
     const [food, setFood] = useState([])
@@ -10,8 +11,8 @@ export const AddFood = () => {
     const [added2Fridge, setAdded2Fridge] = useState(today);
     const [expires, setExpires] = useState();
     const [open, setOpen] = useState("No")
-    const [ idMongo, setIdMongo] = useState();
-
+    const [idMongo, setIdMongo] = useState();
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetch(`http://127.0.0.1:5000/food/${name}`);
@@ -38,6 +39,7 @@ export const AddFood = () => {
         let dateOnFridge = new Date(e.target.onFridge.value).toLocaleDateString()
         let data = {
             Name: food.Name,
+            img_food : food.img_food,
             food_category: food.food_category,
             qty: e.target.quantity.value,
             value: food.value,
@@ -47,6 +49,20 @@ export const AddFood = () => {
             expires_on: expires
         }
         console.log(data)
+        // await fetch('http://127.0.0.1:5000/add', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     mode: "cors",
+        //     headers: {
+        //         "Access-Control-Allow-Origin": "*",
+        //         "Content-type": "application/json",
+        //     }
+        // })
+        // .then(res => res.json())
+        // .then(json => {
+        //     setIdMongo(json.id);
+        // });
+        // console.log(idMongo);
         await fetch('http://127.0.0.1:5000/add', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -56,30 +72,27 @@ export const AddFood = () => {
                 "Content-type": "application/json",
             }
         })
-        .then(res => res.json())
-        .then(json => {
-            setIdMongo(json.id);
-            
-        });
-        await fetch('http://127.0.0.1:5000/add', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            mode: "cors",
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-type": "application/json",
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP error: ${res.status}`);
+            }
+            return res.json()
+        })
+        .then( data => {
+            if (data) {
+                setIdMongo(data.id)
             }
         })
-        .then(res => res.json())
-        .then(json => {
-            setIdMongo(json.id); 
-        });
+        .catch((error) => {
+            console.error(`Could not get products: ${error}`);
+          })
+        ;
+        console.log(idMongo)
         let id = idMongo;
         let food2fridge = {
             id_food : id,
             fk_id_user: localStorage.getItem('user')
         }
-        console.log(food2fridge)
         await fetch('http://127.0.0.1:5000/food2fridge', {
             method: 'POST',
             body: JSON.stringify(food2fridge),
@@ -90,7 +103,7 @@ export const AddFood = () => {
             }
          })
         .then(res => res.json())
-        .then(json => console.log(json) 
+        .then(json => console.log(json)
         );
     }
 const handleChange = (e) => {
@@ -98,9 +111,7 @@ const handleChange = (e) => {
 }
 return (
     <div>
-        <div className="close">
-            <Link to="/user-fridge/1"><img className="img-right" src="http://localhost:3000/cancel.png" width="16" alt="" /></Link>
-        </div>
+        <Close/>
         <div className="form-header">
             <div className="name-block">
                 <h1>{food.Name}</h1>

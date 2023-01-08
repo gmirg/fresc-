@@ -50,6 +50,11 @@ const fridge = {
         let food_name = (params_food_name.charAt(0).toUpperCase() + params_food_name.slice(1)).replaceAll('-', ' ')
         const foodFile = await FoodTemplate.findOne({ Name : food_name })           
         res.json(foodFile)
+    },
+    getMany : async (req, res) => {
+        const ids =  req.body
+        const user_food = await Food.find().where('_id').in(ids).exec()
+        res.json(user_food)
     }
     // insertFood: async (req, res) => {
     //     const { idUsuario, nombreTarea } = req.body;

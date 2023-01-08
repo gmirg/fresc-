@@ -15,7 +15,7 @@ const conexion = {
         return sequelize;
 
     },
-    cerrar: async con => {
+    cerrar: async (con) => {
         await con.close();
         console.log("Cerrada Sequelize");
     }

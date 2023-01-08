@@ -9,6 +9,8 @@ router.get("/list-templates", food.getTemplates)
 router.post("/add", food.addFood)
 router.get("/food/:name", food.getOne);
 router.post("/food2fridge",fridge.insert)
+router.get("/my-food/:fk_id_user", fridge.food_from_user)
+router.post("/food-from-user-fridge", food.getMany)
 // router.post("/insert-food", board.insert);
 // router.post("/update-food", board.update);
 // router.delete("/delete-food", board.delete);

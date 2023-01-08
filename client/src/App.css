@@ -15,15 +15,36 @@ body {
 h2 {
   margin-left: 1%;
 }
-
+h4 {
+  font-weight: 300;
+}
 .food-container, .expiration {
   padding: 0 2%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.myfood-container {
+  padding: 0 2%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.empty {
+  border: 2px dashed rgba(68, 66, 66, 0.469);
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 3rem 0;
+}
+.down {
+  animation: bounce 2s ease 0s 1 normal forwards;
+  margin: 2rem 0 0;
 }
 .expiration {
   justify-content: space-between;
@@ -131,7 +152,7 @@ form {
 .name-block {
   padding: 0 3%;
 }
-.fresco {
+.fresco, .brand {
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -150,6 +171,51 @@ form {
 .error-message {
   color: red;
 }
+@keyframes bounce {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
 /* Media queries */
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
@@ -159,4 +225,8 @@ form {
   .login-header {
     margin-top: 25%;
   }
+  /* .empty {
+     padding: 3rem;
+  } */
+ 
 }

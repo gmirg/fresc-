@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { MyFood } from "./MyFood";
 
 export const UserFridge = () => {
     const [type, setType] = useState([])
     const [linkTo, setLinkTo] = useState("/add-food/Chicken-meat");
     const [navigate, setNavigate] = useState(false);
+
     const handleClick = (value) => {
         setLinkTo(`/add-food/${value.replaceAll(' ', '-')}`)
         setNavigate(true)
@@ -42,6 +44,7 @@ export const UserFridge = () => {
         <div>
             {navigate && (<Navigate to={linkTo} replace={true} />)}
             <div className="container">
+            <div><MyFood /></div>
                 <h2>Choose the food you want to track</h2>
                 <h3>Meat</h3>
                 <div className="food-container">
