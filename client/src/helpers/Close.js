@@ -11,8 +11,13 @@ export const Close = () => {
         navigate(path)
     }
     return (
+        <div className='close-container' >
         <div className="close">
-            <img onClick={handleClose} className="img-right" src="http://localhost:3000/cancel.png" width="16" alt="" />
+            
+                <img onClick={handleClose} className="img-right" src="http://localhost:3000/cancel.png" width="20" alt="" />
+            
+            
+        </div>
         </div>
     )
 }

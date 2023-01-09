@@ -18,7 +18,8 @@ h2 {
 h4 {
   font-weight: 300;
 }
-.food-container, .expiration {
+
+.food-container, .expiration, .close-container {
   padding: 0 2%;
   display: flex;
   flex-flow: row wrap;
@@ -35,7 +36,7 @@ h4 {
   justify-content: center;
 }
 .empty {
-  border: 2px dashed rgba(68, 66, 66, 0.469);
+  /* border: 2px dashed rgba(68, 66, 66, 0.469); */
   border-radius: 20px;
   width: 100%;
   text-align: center;
@@ -69,8 +70,8 @@ form {
   width: 22rem;
   margin: 1rem auto 0;
 }
-.form-header, .login-header, .close {
-  margin: 2rem auto 0;
+.form-header, .login-header, .close  {
+  margin: 1rem auto 0;
   width: 24rem;
 }
 .login-header {
@@ -136,6 +137,9 @@ form {
   flex-flow: row wrap;
   justify-content: space-between;
 }
+button, .img-right {
+  cursor: pointer;
+}
 .radio {
   width: 50%;
   display: inline-flex;
@@ -164,10 +168,9 @@ form {
   margin: auto;
 }
 .img-right {
-  position: absolute;
-    right: 3%;
-    top: 1.5%;
-}
+  float: right;
+  margin-right: 11px;
+} 
 .error-message {
   color: red;
 }
@@ -225,8 +228,8 @@ form {
   .login-header {
     margin-top: 25%;
   }
-  /* .empty {
+  .empty {
      padding: 3rem;
-  } */
+  }
  
 }
