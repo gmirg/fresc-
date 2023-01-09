@@ -1,7 +1,7 @@
 import React, { useEffect, useState,useRef } from "react";
 import { useParams } from "react-router-dom";
 import { today } from "../helpers/today";
-import { Link } from "react-router-dom";
+
 import { useNavigate,generatePath } from "react-router-dom";
 import { Close } from "../helpers/Close";
 
@@ -14,6 +14,13 @@ export const AddFood = () => {
     const [idMongo, setIdMongo] = useState();
     const didMount = useRef(false);
     const navigate = useNavigate();
+    /**
+     * Carga los datos del alimento que se ha clickado para poder añadir. Aquí tuve un problema, al cambiar 
+     * los id de mongo por unos propios, al hacer un filtro para obtener los resultados, no me devolvía
+     * el id, no aparecia, por lo que tuve que tomar el nombre como plan B
+     * 
+     */
+    
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetch(`http://127.0.0.1:5000/food/${name}`);
@@ -21,9 +28,14 @@ export const AddFood = () => {
             setFood(json)
         }
         fetchData()
-            // make sure to catch any error
             .catch(console.error);
     }, [])
+    
+    /**
+     * Gestiona los cambios en los inputs para calcular la fecha en cual se tiene que 
+     * consumir como máximo. 
+     * Inputs: La fecha de entrada en el frigo y si esta abierto o cocinado
+     */
     useEffect(() => {
         if (open === "Yes") {
             let calcExpiredIfOpen = Date.parse(added2Fridge) + (food.lasts_oc * (3600 * 1000 * 24))
@@ -35,6 +47,11 @@ export const AddFood = () => {
             setExpires(expiresDate);
         }
     }, [food, added2Fridge, open])
+    /** 
+     * funcion que maneja la insercion de un alimento en las dos bases de datos, por una parte se añade la coleccion 
+     * alimentos de los usuarios y por otra se relaciona en SQL el alimento con el usuario
+     * @param {*} e 
+    */
     const addtoFridge = async (e) => {
         e.preventDefault();
         let dateOnFridge = new Date(e.target.onFridge.value).toLocaleDateString()
@@ -98,7 +115,10 @@ export const AddFood = () => {
         // }
     }, [idMongo])
     
-
+    /**
+     * Maneja el cambio de los input button radio
+     * @param {*} e 
+     */
     const handleChange = (e) => {
         setOpen(e.target.value)
     }

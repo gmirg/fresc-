@@ -5,7 +5,11 @@ const sequelize = require("../dataBases/mysql");
 
 
 const user_fridge = {
-
+    /**
+     * Inserta un alimento por id de mongo y lo relaciona con el usuario que lo ha añadidd
+     * @param {*} req id de mongo e id de usuario
+     * @param {*} res ok, error
+     */
     insert: async (req, res) => {
         try {
             var con = await conexion.abrir();
@@ -19,6 +23,13 @@ const user_fridge = {
         }
 
     },
+    /**
+     * Extrae el Id de mongo de la base de datos de SQL 
+     * @param {*} req 
+     * @param {*} res user id
+     * @returns json con los ids de los alimentos de ese usuario,
+     */
+
     food_from_user: async (req,res) => {
         var con = await conexion.abrir();
         const user_id = req.params.user_id;
@@ -32,17 +43,6 @@ const user_fridge = {
         await conexion.cerrar(con);
         return userFood
     }
-    // delete: async (req, res) => {
-    //     try {
-    //         var con = await conexion.abrir();
-    //         const user_boardM = await User_boardModel.create(con);
-    //         res.json(await user_boardM.destroy({ where: { id: req.body.id } }));
-    //     } catch (error) {
-    //         res.json(error);
-    //     } finally {
-    //         await conexion.cerrar(con);
-    //     }
-    // }
 };
 
 module.exports = user_fridge;

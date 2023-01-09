@@ -1,0 +1,51 @@
+Name,Notes,_id,category_icon,expired,food_category,img_food,lasts,lasts_oc,opened_cooked,qty,value
+Chicken meat,,1,./img/meat/turkey.png,FALSE,Meat,./img/meat/chicken.png,2,5,FALSE,,4.58
+Asparagus,,2,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/asparagus.png,5,5,FALSE,,4.00
+Egg,,3,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/eggs.png,7,7,FALSE,,0.17
+Salmon,,4,./img/fish/ol.png,FALSE,Fish,./img/fish/salmon.png,2,2,FALSE,,9.85
+Lemon,,5,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/lemon.png,21,3,FALSE,,0.74
+Turkey,,6,./img/meat/turkey.png,FALSE,Meat,./img/meat/turkey.png,2,5,FALSE,,8.00
+Beef,,7,./img/meat/turkey.png,FALSE,Meat,./img/meat/beef.png,2,5,FALSE,,24.00
+Lamb,,8,./img/meat/turkey.png,FALSE,Meat,./img/meat/Lamb.png,2,5,FALSE,,18.00
+Pork,,9,./img/meat/turkey.png,FALSE,Meat,./img/meat/pork.png,2,5,FALSE,,18.00
+Rabbit,,10,./img/meat/turkey.png,FALSE,Meat,./img/meat/rabbit.png,2,5,FALSE,,11.00
+Ham,,11,./img/meat/turkey.png,FALSE,Meat,./img/meat/york.png,90,5,FALSE,,12.00
+Jamon,,12,./img/meat/turkey.png,FALSE,Meat,./img/meat/jamon.png,90,5,FALSE,,30.00
+Chorizo,,13,./img/meat/turkey.png,FALSE,Meat,./img/meat/chorizo.png,90,5,FALSE,,7.00
+Salchichon,,14,./img/meat/turkey.png,FALSE,Meat,./img/meat/salchichon.png,90,5,FALSE,,15.00
+Mortadela,,15,./img/meat/turkey.png,FALSE,Meat,./img/meat/mortadela.png,90,5,FALSE,,8.00
+Sliced Turkey,,16,./img/meat/turkey.png,FALSE,Meat,./img/meat/fillet.png,90,5,FALSE,,12.00
+Pate,,17,./img/meat/turkey.png,FALSE,Meat,./img/meat/foie.jpeg,90,3,FALSE,,8.00
+Hamburger,,18,./img/meat/turkey.png,FALSE,Meat,./img/meat/burger.png,2,4,FALSE,,12.00
+Sausages,,19,./img/meat/turkey.png,FALSE,Meat,./img/meat/sausages.png,2,4,FALSE,,3.00
+Tomato,,20,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/tomato.png,14,4,FALSE,,2.50
+Lettuce,,21,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/lettuce.png,7,7,FALSE,,0.80
+Onion,,22,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/onion.png,30,7,FALSE,,2.60
+Salad,,23,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/salad.png,4,4,FALSE,,2.50
+Bell pepper,,25,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/bell-pepper.png,14,2,FALSE,,2.00
+Leek,,24,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/leek.png,14,2,FALSE,,2.60
+Zucchini,,26,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/zucchini.png,7,2,FALSE,,2.00
+Pumpkin,,27,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/pumpkin.png,120,3,FALSE,,2.50
+Parsley,,28,./img/vegetables/salad.png,FALSE,Vegetables,./img/vegetables/parsley.png,4,4,FALSE,,1.00
+Anchovy,,29,./img/fish/ol.png,FALSE,Fish,./img/fish/anchovy.png,40,4,FALSE,,25.00
+Cod,,30,./img/fish/ol.png,FALSE,Fish,./img/fish/merluza.png,2,2,FALSE,,25.00
+Sole,,31,./img/fish/ol.png,FALSE,Fish,./img/fish/sole.png,2,2,FALSE,,17.00
+Tuna,,32,./img/fish/ol.png,FALSE,Fish,./img/fish/tuna.png,40,4,FALSE,,13.00
+Milk,,33,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/milk.png,7,7,FALSE,,1.00
+White yogurt,,34,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/white-yogurt.png,21,7,FALSE,,0.75
+Fruit yogurt,,35,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/fruit-yogurt.png,21,7,FALSE,,0.75
+Condensed milk,,36,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/condensed-milk.png,365,14,FALSE,,2.60
+Chocolate,,37,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/chocolate.png,150,150,FALSE,,1.00
+Fresh cheese,,38,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/feta.png,10,3,FALSE,,12.00
+Matured cheese,,39,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/curado.png,90,45,FALSE,,13.00
+Semi cheese,,40,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/semi.png,21,7,FALSE,,16.00
+Sliced cheese,,41,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/sliced.png,90,7,FALSE,,10.00
+Banana,,42,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/banana.png,7,1,FALSE,,2.00
+Apple,,43,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/apple.png,60,2,FALSE,,2.00
+Pear,,44,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/pear.png,12,2,FALSE,,2.20
+Strawberry,,45,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/strawberry.png,7,1,FALSE,,9.50
+Pineapple,,46,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/pineapple.png,5,3,FALSE,,3.60
+Orange,,47,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/orange.png,21,1,FALSE,,1.70
+Peach,,48,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/peach.png,5,2,FALSE,,6.00
+Juice,,49,./img/fruits/fruit-salad.png,FALSE,Fruit,./img/fruits/juice.png,90,5,FALSE,,2.00
+Sliced bread,,50,./img/dairy/ol.png,FALSE,Dairy,./img/dairy/bread.png,7,7,FALSE,,2.00

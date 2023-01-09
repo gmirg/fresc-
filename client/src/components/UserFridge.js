@@ -6,11 +6,17 @@ export const UserFridge = () => {
     const [type, setType] = useState([])
     const [linkTo, setLinkTo] = useState("/add-food/Chicken-meat");
     const [navigate, setNavigate] = useState(false);
-
+    /**
+     * lleva a la página del producto que quieres añadir
+     * @param {*} value nombre del producto en la BD
+     */
     const handleClick = (value) => {
         setLinkTo(`/add-food/${value.replaceAll(' ', '-')}`)
         setNavigate(true)
     }
+    /**
+     *  Carga todos los alimentos tipo de la base de datos
+     */
     useEffect(() => {
         //Alimentos tipo
         const fetchData = async () => {
@@ -22,6 +28,9 @@ export const UserFridge = () => {
             // make sure to catch any error
             .catch(console.error);
     }, [])
+    /**
+     * Separamos los alimentos por categoria, para mostrarlos mejor en la app
+     */
     let meat = [], vegetables = [], fruit = [], fish = [], dairy = [];
     type.map(element => {
         if (element.food_category === "Meat") {

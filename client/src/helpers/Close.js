@@ -1,7 +1,10 @@
 import React from 'react'
 import { generatePath, useNavigate } from "react-router-dom"
 
-
+/**
+ * 
+ * @returns Redirige a la pagina de frigorifico de usuario
+ */
 
 export const Close = () => {
     const navigate = useNavigate();

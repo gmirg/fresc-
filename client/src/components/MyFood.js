@@ -40,24 +40,14 @@ export const MyFood = () => {
             .then(json => setFridgeContent(json))
         setStart(true)
     }, [trackedFood, start])
-
+    /**
+     * Esto convierte el array de objetos recogido de la base de datos de SQL en un array para utilizarlo
+     * en el filro de mongoose y poder extraer la info de todos los alimentos en el frigorifico del usuario 
+     */
     let ids = [];
     let idsFood = trackedFood.map(element => {
         ids.push(element.id_food)
     })
-    // const fridgeFood = async () => {
-    //     fetch('http://127.0.0.1:5000/food-from-user-fridge', {
-    //         method: 'POST',
-    //         body: JSON.stringify(ids),
-    //         mode: "cors",
-    //         headers: {
-    //             "Access-Control-Allow-Origin": "*",
-    //             "Content-type": "application/json",
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(json => console.log(json))
-    // // }
     return (
         <>
             <h2>Your food</h2>

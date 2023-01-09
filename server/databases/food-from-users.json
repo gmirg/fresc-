@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "63bb97ce1c212e071b1d036b"
+  },
+  "Name": "Lamb",
+  "img_food": "./img/meat/Lamb.png",
+  "food_category": "Meat",
+  "qty": 1,
+  "value": 18,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "Yes",
+  "Notes": "",
+  "expires_on": "14/01/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bb97f41c212e071b1d0376"
+  },
+  "Name": "Onion",
+  "img_food": "./img/vegetables/onion.png",
+  "food_category": "Vegetables",
+  "qty": 1,
+  "value": 2.6,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "No",
+  "Notes": "",
+  "expires_on": "08/02/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bb98d31c212e071b1d039a"
+  },
+  "Name": "Strawberry",
+  "img_food": "./img/fruits/strawberry.png",
+  "food_category": "Fruit",
+  "qty": 1,
+  "value": 9.5,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "Yes",
+  "Notes": "",
+  "expires_on": "10/01/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bb9a111c212e071b1d03a8"
+  },
+  "Name": "Milk",
+  "img_food": "./img/dairy/milk.png",
+  "food_category": "Dairy",
+  "qty": 1,
+  "value": 1,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "No",
+  "Notes": "",
+  "expires_on": "16/01/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bbb9731c212e071b1d03c7"
+  },
+  "Name": "Mortadela",
+  "img_food": "./img/meat/mortadela.png",
+  "food_category": "Meat",
+  "qty": 1,
+  "value": 8,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1688144400000"
+    }
+  },
+  "opened_cooked": "No",
+  "Notes": "Sabe un poco a rancio",
+  "expires_on": "07/04/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bbc72d1c212e071b1d03d9"
+  },
+  "Name": "Beef",
+  "img_food": "./img/meat/beef.png",
+  "food_category": "Meat",
+  "qty": 1,
+  "value": 24,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "No",
+  "Notes": "",
+  "expires_on": "11/01/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bbc77b1c212e071b1d03e4"
+  },
+  "Name": "Lemon",
+  "img_food": "./img/fruits/lemon.png",
+  "food_category": "Fruit",
+  "qty": 1,
+  "value": 0.74,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693587600000"
+    }
+  },
+  "opened_cooked": "No",
+  "Notes": "rgrggrg",
+  "expires_on": "02/03/2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63bbd72c1c212e071b1d03fd"
+  },
+  "Name": "Leek",
+  "img_food": "./img/vegetables/leek.png",
+  "food_category": "Vegetables",
+  "qty": 3,
+  "value": 2.6,
+  "onFridge": {
+    "$date": {
+      "$numberLong": "1693501200000"
+    }
+  },
+  "opened_cooked": "Yes",
+  "Notes": "Hola",
+  "expires_on": "11/01/2023",
+  "__v": 0
+}]

@@ -1,3 +1,9 @@
+/**
+ * No es funcional, he querido trabajar mas sobre las funcionalidades principales
+ * 
+ */
+
+
 var nodemailer = require('nodemailer');
 
 const smtpConfig = {
