@@ -1,27 +1,35 @@
 {
-  "name": "fresc-",
+  "name": "frescoo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gmirg/fresc-.git"
+    "url": "git+https://github.com/gmirg/frescoo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gmirg/fresc-/issues"
+    "url": "https://github.com/gmirg/frescoo/issues"
   },
-  "homepage": "https://github.com/gmirg/fresc-#readme",
+  "homepage": "https://github.com/gmirg/frescoo#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsdoc": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.20",
     "sequelize": "^6.25.6"
   }
 }

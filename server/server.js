@@ -1,27 +1,32 @@
-const Sequelize = require('sequelize');
-const mongoose = require("mongoose");
+const express = require("express");
+const conn = require("./databases/mongodb")
+const routes = require("./routes/routes")
+const app = express();
+const cors = require ("cors")
+const con =require("./databases/mysql")
+// import User from './models/User.model';
+// const router = require("express").Router();
+// const cors = require("cors");
+// const cookieParser = require('cookie-parser');
+// middlewares de express utilizados
+// app.use(urlencoded({extended: false}));
+// app.use(json());
 
-// Conexión a Mongodb
-const url = "mongodb://localhost:27017/frescoo";
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
-mongoose.connect(url, function (err) {
-    if (err) throw err;
-    console.log("Conexión correcta a mongodb");
+// Rutas
+app.use("/", routes);
+
+// Modelos
+
+// inicialización
+const port = 5000;
+conn.open()
+// con.abrir()
+
+
+app.listen(port, () => {
+    console.log(`Servidor iniciado en http://127.0.0.1:${port}`);
 });
-mongoose.disconnect();
-
-// Conexión a MySql
-
-const sequelize = new Sequelize('frescoo_users', 'root', 'rootroot', {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306
-})
-
-sequelize.authenticate()
-    .then(() => {
-        console.log('Conectado a SQL')
-    })
-    .catch(err => {
-        console.log('No conectado: ' + err)
-    });
