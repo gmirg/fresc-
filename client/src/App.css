@@ -19,7 +19,7 @@ h4 {
   font-weight: 300;
 }
 
-.food-container, .expiration, .close-container {
+.register-block, .expiration, .close-container {
   padding: 0 2%;
   display: flex;
   flex-flow: row wrap;
@@ -70,25 +70,30 @@ form {
   width: 22rem;
   margin: 1rem auto 0;
 }
-.form-header, .login-header, .close  {
+.form-header, .register-header, .close  {
   margin: 1rem auto 0;
   width: 24rem;
 }
 .login-header {
   margin-top: 10%;
+  
 }
-.login-block h1, .login-block h2 {
+.login-container h1, .login-container h2 {
   text-align: center;
   margin: 0;
 }
 .form-container .count {
   padding: 0.25rem 0;
+  
   text-align: center;
   color: #fff;
   background: #333;
   border-radius: 4px;
 }
-
+.login-container {
+  max-width: 24rem;
+  margin: 0 auto;
+}
 .form-container div,
 .form-container select {
   margin-top: 5px;

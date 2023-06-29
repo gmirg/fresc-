@@ -30,7 +30,7 @@ export const Login = () => {
     return (
         <div>
             <div className="login-header">
-                <div className="login-block">
+                <div className="login-container">
                     <img className="logo-center" src="http://localhost:3000/login.png" width="250" alt="" />
                     <h1>frescoo</h1>
                     <h2>Welcome back!</h2>

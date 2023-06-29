@@ -6,7 +6,7 @@ const sequelize = require("../dataBases/mysql");
 
 const user_fridge = {
     /**
-     * Inserta un alimento por id de mongo y lo relaciona con el usuario que lo ha añadidd
+     * Inserta un alimento por id de mongo y lo relaciona con el usuario que lo ha añadido
      * @param {*} req id de mongo e id de usuario
      * @param {*} res ok, error
      */
